@@ -4,7 +4,7 @@ const EventPage = ({ data }) => {
   console.log(data);
   return (
     <div>
-      <Image width={500} height={300} src={data.image} alt={data.title} />
+      <Image width={700} height={500} src={data.image} alt={data.title} />
       <h1>{data.title}</h1>
       <p>{data.description}</p>
     </div>

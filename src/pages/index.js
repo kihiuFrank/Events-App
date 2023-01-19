@@ -1,8 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
-import Link from "next/link";
+import { HomePage } from "@/components/home-page";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,42 +14,7 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header>
-        <nav>
-          <Link href="/" passHref>
-            Home
-          </Link>
-
-          <Link href="/events" passHref>
-            Events
-          </Link>
-
-          <Link href="/about-us" passHref>
-            About Us
-          </Link>
-        </nav>
-      </header>
-
-      <div>
-        {data.map((event) => (
-          <Link key={event.id} href={`/events/${event.id}`} passHref>
-            <Image
-              width={200}
-              height={200}
-              src={event.image}
-              alt={event.title}
-            />
-            <h2>{event.title}</h2>
-            <p>{event.description}</p>
-          </Link>
-        ))}
-      </div>
-
-      <footer className={styles.footer}>
-        Copyright &copy; {1900 + new Date().getYear()}{" "}
-        <a href="https://github.com/kihiuFrank">kihiuFrank</a> All Rights
-        Reserved.
-      </footer>
+      <HomePage data={data} />
     </div>
   );
 }
