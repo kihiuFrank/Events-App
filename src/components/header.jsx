@@ -32,7 +32,7 @@ export const Header = () => {
             </ul>
           </nav>
         </div>
-        <p className="title"> Sed ut perspiciatis unde omnis</p>
+        <p className="title"> Check out trending events!</p>
       </div>
     </header>
   );
